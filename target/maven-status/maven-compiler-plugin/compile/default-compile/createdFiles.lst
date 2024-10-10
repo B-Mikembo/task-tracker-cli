@@ -1,0 +1,7 @@
+com/github/brice/cli/controller/TaskController.class
+com/github/brice/cli/TaskTrackerCli.class
+com/github/brice/cli/view/View.class
+com/github/brice/cli/model/TaskFile.class
+com/github/brice/cli/model/Status.class
+com/github/brice/cli/controller/TaskController$Action.class
+com/github/brice/cli/model/Task.class
