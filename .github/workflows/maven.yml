@@ -1,0 +1,23 @@
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java: [ 23 ]
+    name: Java ${{ matrix.java }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: setup
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'temurin'
+      - name: build
+        run: |
+          mvn -B package
