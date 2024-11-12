@@ -1,0 +1,21 @@
+name: "run tests"
+
+on:
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+    branches: [ develop ]
+
+jobs:
+  dev-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'liberica'
+          java-version: '21'
+          cache: 'maven'
+
+      - name: Run Unit
+        run: mvn clean verify --no-transfer-progress
