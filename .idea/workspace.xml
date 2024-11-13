@@ -5,13 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fedb6cd0-2382-4743-9f5c-c093d2b64595" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/codeql.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/CommandRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/application/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/application/in/ManagingTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/application/out/Tasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/infrastructure/adapter/out/TasksJsonAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,12 +38,12 @@
     &quot;assignee&quot;: &quot;B-Mikembo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/B-Mikembo/task-tracker-cli.git&quot;,
-    &quot;accountId&quot;: &quot;7e127ecc-ced7-492e-b547-7acd1751c344&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:B-Mikembo/task-tracker-cli.git",
+    "accountId": "7e127ecc-ced7-492e-b547-7acd1751c344"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -42,12 +58,33 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.demo.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "add-task",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.github.brice.demo" />
+      <module name="task-tracker-cli" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.brice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.demo" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
