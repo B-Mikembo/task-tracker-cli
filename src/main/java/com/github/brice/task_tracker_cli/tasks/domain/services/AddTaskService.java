@@ -1,7 +1,7 @@
-package com.github.brice.task_tracker_cli.tasks.domain.use_cases;
+package com.github.brice.task_tracker_cli.tasks.domain.services;
 
 import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
-import com.github.brice.task_tracker_cli.tasks.domain.use_cases.ports.TaskRepository;
+import com.github.brice.task_tracker_cli.tasks.domain.services.ports.TaskRepository;
 
 public class AddTaskService {
     private final TaskRepository taskRepository;

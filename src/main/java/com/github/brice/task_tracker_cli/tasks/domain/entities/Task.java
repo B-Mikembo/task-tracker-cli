@@ -21,4 +21,24 @@ public class Task {
         this.createdAt = createdAt;
         this.updateAt = updateAt;
     }
+
+    public UUID id() {
+        return id;
+    }
+
+    public String description() {
+        return description;
+    }
+
+    public TaskStatus status() {
+        return status;
+    }
+
+    public LocalDateTime createdAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime updateAt() {
+        return updateAt;
+    }
 }

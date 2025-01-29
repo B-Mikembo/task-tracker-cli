@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fedb6cd0-2382-4743-9f5c-c093d2b64595" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/TasksRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/application/TaskTrackerCLI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/TaskStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/use_cases/AddTaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/use_cases/ports/TaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/TaskEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/TaskTrackerCLI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/application/TaskTrackerCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/application/cli/TaskTrackerCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/JsonTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/JsonTaskRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +21,7 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -68,8 +63,9 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="TaskTrackerCLI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.application.TaskTrackerCLI" />
+      <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.application.cli.TaskTrackerCLI" />
       <module name="task-tracker-cli" />
+      <option name="PROGRAM_PARAMETERS" value="add &quot;Buy milk&quot;" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.github.brice.task_tracker_cli.tasks.domain.use_cases.ports.*" />
