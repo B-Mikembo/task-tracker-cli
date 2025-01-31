@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fedb6cd0-2382-4743-9f5c-c093d2b64595" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JsonTaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/TaskEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/inmemory/InMemoryTaskRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/entrypoints/cli/resource/TaskResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/brice/task_tracker_cli/tasks/domain/entities/TaskTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/JSONReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/JSONWriterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/application/cli/TaskTrackerCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/entrypoints/cli/TaskTrackerCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/config/TasksRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/config/TasksRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/TaskStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/entities/TaskStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/services/AddTaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/application/services/AddTaskService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/domain/services/ports/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/application/repositories/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/JsonTaskRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/file/TaskEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/JSONReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/infrastructure/dataproviders/file/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +60,7 @@
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.TaskTrackerCLI.executor": "Run",
+    "JUnit.JSONReaderTest.parseJSONListOfCar.executor": "Run",
     "JUnit.JSONWriterTest.toJSONWithAClass.executor": "Run",
     "JUnit.TaskTest$AllArgsConstructor.executor": "Run",
     "JUnit.TaskTest$AllArgsConstructor.givenEmptyOrBlankId_whenCreateNewInstance_thenThrowIllegalArgumentException.executor": "Run",
@@ -89,20 +74,25 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "add-task",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file" />
       <recent name="com.github.brice.task_tracker_cli.tasks.domain.entities" />
       <recent name="com.github.brice.task_tracker_cli.tasks.infrastructure.file" />
       <recent name="com.github.brice.task_tracker_cli.tasks.domain.services" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TaskTrackerCLI">
+  <component name="RunManager" selected="JUnit.JSONReaderTest.parseJSONListOfCar">
     <configuration name="TaskTrackerCLI" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.infrastructure.entrypoints.cli.TaskTrackerCLI" />
       <module name="task-tracker-cli" />
@@ -113,6 +103,22 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JSONReaderTest.parseJSONListOfCar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="task-tracker-cli" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file" />
+      <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file.JSONReaderTest" />
+      <option name="METHOD_NAME" value="parseJSONListOfCar" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +187,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.TaskTrackerCLI" />
+      <item itemvalue="JUnit.JSONReaderTest.parseJSONListOfCar" />
       <item itemvalue="JUnit.TaskTest" />
       <item itemvalue="JUnit.TaskTest$AllArgsConstructor" />
       <item itemvalue="JUnit.TaskTest$AllArgsConstructor.givenNullId_whenCreateNewTaskInstance_thenThrowNullPointerException" />
@@ -188,6 +195,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JSONReaderTest.parseJSONListOfCar" />
         <item itemvalue="JUnit.TaskTest" />
         <item itemvalue="JUnit.TaskTest$AllArgsConstructor" />
         <item itemvalue="JUnit.TaskTest$AllArgsConstructor.givenNullUpdatedAt_whenCreateNewTaskInstance_thenThrowNullPointerException" />
