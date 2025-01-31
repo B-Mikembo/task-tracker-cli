@@ -1,7 +1,7 @@
-package com.github.brice.task_tracker_cli.tasks.domain.services;
+package com.github.brice.task_tracker_cli.tasks.application.services;
 
+import com.github.brice.task_tracker_cli.tasks.application.repositories.TaskRepository;
 import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
-import com.github.brice.task_tracker_cli.tasks.domain.services.ports.TaskRepository;
 
 public class AddTaskService {
     private final TaskRepository taskRepository;

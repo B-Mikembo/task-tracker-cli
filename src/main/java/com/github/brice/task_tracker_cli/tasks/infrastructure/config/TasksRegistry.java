@@ -1,6 +1,6 @@
-package com.github.brice.task_tracker_cli.tasks.config;
+package com.github.brice.task_tracker_cli.tasks.infrastructure.config;
 
-import com.github.brice.task_tracker_cli.tasks.domain.services.ports.TaskRepository;
+import com.github.brice.task_tracker_cli.tasks.application.repositories.TaskRepository;
 
 import java.util.HashMap;
 import java.util.function.Supplier;

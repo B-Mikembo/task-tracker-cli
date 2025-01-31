@@ -3,42 +3,28 @@ package com.github.brice.task_tracker_cli.tasks.domain.entities;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class Task {
-    private UUID id = UUID.randomUUID();
-    private String description;
-    private TaskStatus status = TaskStatus.TODO;
-    private LocalDateTime createdAt = LocalDateTime.now();
-    private LocalDateTime updateAt = LocalDateTime.now();
+import static java.util.Objects.requireNonNull;
+
+public record Task(
+        UUID id,
+        String description,
+        TaskStatus status,
+        LocalDateTime createdAt,
+        LocalDateTime updatedAt
+) {
 
     public Task(String description) {
-        this.description = description;
+        this(UUID.randomUUID(), description, TaskStatus.TODO, LocalDateTime.now(), LocalDateTime.now());
     }
 
-    public Task(UUID id, String description, TaskStatus status, LocalDateTime createdAt, LocalDateTime updateAt) {
-        this.id = id;
-        this.description = description;
-        this.status = status;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
-    }
-
-    public UUID id() {
-        return id;
-    }
-
-    public String description() {
-        return description;
-    }
-
-    public TaskStatus status() {
-        return status;
-    }
-
-    public LocalDateTime createdAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime updateAt() {
-        return updateAt;
+    public Task {
+        if(description.isBlank()) {
+            throw new IllegalArgumentException();
+        }
+        requireNonNull(id);
+        requireNonNull(description);
+        requireNonNull(status);
+        requireNonNull(createdAt);
+        requireNonNull(updatedAt);
     }
 }
