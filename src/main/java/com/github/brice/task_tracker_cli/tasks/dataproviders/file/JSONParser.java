@@ -1,10 +1,11 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file.JSONParser.Kind.*;
+import static com.github.brice.task_tracker_cli.tasks.dataproviders.file.JSONParser.Kind.*;
+import static java.lang.Integer.parseInt;
 import static java.util.regex.Pattern.compile;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.IntStream.rangeClosed;
@@ -38,14 +39,14 @@ public class JSONParser {
 
     private static void parseArray(String currentKey, Lexer lexer, JSONVisitor visitor) {
         var token = lexer.next();
-        if(token.is(RIGHT_BRACKET)) {
+        if (token.is(RIGHT_BRACKET)) {
             visitor.endArray(currentKey);
             return;
         }
-        for(;;) {
+        for (; ; ) {
             parseValue(null, token, lexer, visitor);
             token = lexer.next();
-            if(token.is(RIGHT_BRACKET)) {
+            if (token.is(RIGHT_BRACKET)) {
                 visitor.endArray(currentKey);
                 return;
             }
@@ -81,6 +82,7 @@ public class JSONParser {
 
     private static void parseValue(String currentKey, Token token, Lexer lexer, JSONVisitor visitor) {
         switch (token.kind) {
+            case INTEGER -> visitor.value(currentKey, parseInt(token.text));
             case STRING -> visitor.value(currentKey, token.text);
             case LEFT_CURLY -> {
                 visitor.startObject(currentKey);
@@ -95,6 +97,7 @@ public class JSONParser {
     }
 
     enum Kind {
+        INTEGER("([0-9]+)"),
         STRING("\"([^\\\"]*)\""),
         LEFT_CURLY("(\\{)"),
         RIGHT_CURLY("(\\})"),

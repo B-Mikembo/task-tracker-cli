@@ -1,4 +1,4 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.entrypoints.cli.resource;
+package com.github.brice.task_tracker_cli.tasks.entrypoints.cli.resource;
 
 import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
 

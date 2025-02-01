@@ -1,4 +1,4 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.config;
+package com.github.brice.task_tracker_cli.tasks.config;
 
 import com.github.brice.task_tracker_cli.tasks.application.repositories.TaskRepository;
 

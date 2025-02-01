@@ -1,4 +1,4 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.inmemory;
+package com.github.brice.task_tracker_cli.tasks.dataproviders.inmemory;
 
 import com.github.brice.task_tracker_cli.tasks.application.repositories.TaskRepository;
 import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;

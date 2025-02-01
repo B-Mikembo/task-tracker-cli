@@ -1,11 +1,11 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.entrypoints.cli;
+package com.github.brice.task_tracker_cli.tasks.entrypoints.cli;
 
-import com.github.brice.task_tracker_cli.tasks.infrastructure.config.TasksRegistry;
+import com.github.brice.task_tracker_cli.tasks.config.TasksRegistry;
 import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
 import com.github.brice.task_tracker_cli.tasks.application.services.AddTaskService;
-import com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file.JsonTaskRepository;
-import com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.inmemory.InMemoryTaskRepository;
-import com.github.brice.task_tracker_cli.tasks.infrastructure.entrypoints.cli.resource.TaskResponse;
+import com.github.brice.task_tracker_cli.tasks.dataproviders.file.JsonTaskRepository;
+import com.github.brice.task_tracker_cli.tasks.dataproviders.inmemory.InMemoryTaskRepository;
+import com.github.brice.task_tracker_cli.tasks.entrypoints.cli.resource.TaskResponse;
 
 public class TaskTrackerCLI {
 
@@ -16,7 +16,7 @@ public class TaskTrackerCLI {
             System.out.println("Missing command");
         }
         configureRegistries();
-        var addTaskService = new AddTaskService(tasksRegistry.create("memory"));
+        var addTaskService = new AddTaskService(tasksRegistry.create("json"));
         switch (args[0]) {
             case "add" -> {
                 if(args.length < 2) {

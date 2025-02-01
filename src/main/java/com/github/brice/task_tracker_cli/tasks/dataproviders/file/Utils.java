@@ -1,4 +1,4 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
 
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;

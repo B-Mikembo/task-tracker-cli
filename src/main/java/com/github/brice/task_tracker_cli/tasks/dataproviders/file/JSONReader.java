@@ -1,12 +1,14 @@
-package com.github.brice.task_tracker_cli.tasks.infrastructure.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.Objects.requireNonNull;
 
@@ -87,6 +89,22 @@ public class JSONReader {
                 .orElseGet(() -> ObjectBuilder.bean(Utils.erase(type)));
     }
 
+    public <T> T parseJSON(String text, TypeReference<T> typeReference) {
+        var elementType = findElementType(typeReference);
+        @SuppressWarnings("unchecked")
+        var result = (T) parseJSON(text, elementType);
+        return result;
+    }
+
+    private static Type findElementType(TypeReference<?> typeReference) {
+        var typeReferenceType = Arrays.stream(typeReference.getClass().getGenericInterfaces())
+                .flatMap(t -> t instanceof ParameterizedType parameterizedType ? Stream.of(parameterizedType) : null)
+                .filter(t -> t.getRawType() == TypeReference.class)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("invalid TypeReference " + typeReference));
+        return typeReferenceType.getActualTypeArguments()[0];
+    }
+
     @FunctionalInterface
     public interface TypeMatcher {
         Optional<ObjectBuilder<?>> match(Type type);
@@ -147,5 +165,8 @@ public class JSONReader {
         private void populate(String key, Object value) {
             objectBuilder.populater.populate(result, key, value);
         }
+    }
+
+    public interface TypeReference<T> {
     }
 }
