@@ -15,26 +15,23 @@ import static java.util.stream.Collectors.joining;
 
 public class JsonTaskRepository implements TaskRepository {
     private static final String FILE_PATH = "tasks.json";
+    private final List<JsonTask> jsonTasks;
+    private final long nextTaskId;
     private final JSONReader reader = new JSONReader();
 
-    @Override
-    public Task save(Task task) {
-        var jsonTask = JsonTask.fromDomain(task);
-        var jsonTasks = new ArrayList<>(readJsonFile());
-        jsonTasks.add(jsonTask);
-        writeJsonFile(jsonTasks);
-        return task;
+    public JsonTaskRepository() {
+        reader.addTypeMatcher(listTypeMatcher());
+        jsonTasks = readJsonFile();
+        nextTaskId = jsonTasks.stream()
+                .mapToLong(JsonTask::getId)
+                .max().orElse(0L) + 1;
     }
 
-    private void writeJsonFile(List<JsonTask> jsonTasks) {
-        try (var bufferWriter = new BufferedWriter(new FileWriter(FILE_PATH))) {
-            var jsonContent = jsonTasks.stream()
-                    .map(JsonTask::toJson)
-                    .collect(joining(",", "[", "]"));
-            bufferWriter.write(jsonContent);
-        } catch (IOException e) {
-            throw new IllegalStateException("issue when writing in file");
-        }
+    private static JSONReader.TypeMatcher listTypeMatcher() {
+        return type -> Optional.of(type)
+                .flatMap(t -> t instanceof ParameterizedType parameterizedType ? Optional.of(parameterizedType) : Optional.empty())
+                .filter(t -> t.getRawType() == List.class)
+                .map(t -> JSONReader.ObjectBuilder.list(t.getActualTypeArguments()[0]));
     }
 
     private List<JsonTask> readJsonFile() {
@@ -67,14 +64,36 @@ public class JsonTaskRepository implements TaskRepository {
         }
     }
 
-    public JsonTaskRepository() {
-        reader.addTypeMatcher(listTypeMatcher());
+    @Override
+    public Task findById(long taskId) {
+        return jsonTasks.stream()
+                .filter(jsonTask -> jsonTask.getId() == taskId)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Task with id " + taskId + " doesn't exists")).toDomain();
     }
 
-    private static JSONReader.TypeMatcher listTypeMatcher() {
-        return type -> Optional.of(type)
-                .flatMap(t -> t instanceof ParameterizedType parameterizedType ? Optional.of(parameterizedType) : Optional.empty())
-                .filter(t -> t.getRawType() == List.class)
-                .map(t -> JSONReader.ObjectBuilder.list(t.getActualTypeArguments()[0]));
+    @Override
+    public Task save(Task task) {
+        if (task.id() == 0L) {
+            task = new Task(nextTaskId, task.description(), task.status(), task.createdAt(), task.updatedAt());
+        }
+        var jsonTask = JsonTask.fromDomain(task);
+        var updateJsonTasks = new ArrayList<>(jsonTasks);
+        var finalTask = task;
+        updateJsonTasks.removeIf(t -> finalTask.id() == t.getId());
+        updateJsonTasks.add(jsonTask);
+        writeJsonFile(updateJsonTasks);
+        return task;
+    }
+
+    private void writeJsonFile(List<JsonTask> jsonTasks) {
+        try (var bufferWriter = new BufferedWriter(new FileWriter(FILE_PATH))) {
+            var jsonContent = jsonTasks.stream()
+                    .map(JsonTask::toJson)
+                    .collect(joining(",", "[", "]"));
+            bufferWriter.write(jsonContent);
+        } catch (IOException e) {
+            throw new IllegalStateException("issue when writing in file");
+        }
     }
 }
