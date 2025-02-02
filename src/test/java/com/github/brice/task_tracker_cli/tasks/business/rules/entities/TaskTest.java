@@ -1,10 +1,21 @@
 package com.github.brice.task_tracker_cli.tasks.business.rules.entities;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class TaskTest {
+
+    @ParameterizedTest
+    @EmptySource
+    @ValueSource(strings = {" ", "\n", "\t"})
+    void userCannotCreateTaskWithEmptyDescription(String description) {
+        assertThrows(IllegalArgumentException.class, () -> new Task(description));
+    }
 
     @Test
     void userCanMarkTaskAsInProgress() {
