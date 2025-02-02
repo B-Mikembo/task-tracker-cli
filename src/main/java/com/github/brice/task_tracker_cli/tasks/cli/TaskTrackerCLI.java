@@ -52,6 +52,25 @@ public class TaskTrackerCLI {
                     var listAllService = new ListAllService(taskRepository);
                     var tasks = listAllService.execute().stream().map(TaskResponse::fromDomain).toList();
                     System.out.println(tasks);
+                } else {
+                    switch (args[1]) {
+                        case "done" -> {
+                            var listDoneTasksService = new ListDoneTasksService(taskRepository);
+                            var tasks = listDoneTasksService.execute().stream().map(TaskResponse::fromDomain).toList();
+                            System.out.println(tasks);
+                        }
+                        case "todo" -> {
+                            var listTodoTasksService = new ListTodoTasksService(taskRepository);
+                            var tasks = listTodoTasksService.execute().stream().map(TaskResponse::fromDomain).toList();
+                            System.out.println(tasks);
+                        }
+                        case "in-progress" -> {
+                            var listInProgress = new ListInProgressTasksService(taskRepository);
+                            var tasks = listInProgress.execute().stream().map(TaskResponse::fromDomain).toList();
+                            System.out.println(tasks);
+                        }
+                        default -> throw new IllegalArgumentException("Unknown list command : " + args[1]);
+                    }
                 }
             }
             default -> throw new IllegalArgumentException("Unknown command: " + args[0]);
