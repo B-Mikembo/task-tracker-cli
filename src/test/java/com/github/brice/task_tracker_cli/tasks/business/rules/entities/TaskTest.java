@@ -9,7 +9,14 @@ class TaskTest {
     @Test
     void userCanMarkTaskAsInProgress() {
         var existingTask = new Task("Buy milk");
-        var updatedTask = existingTask.markAsInProgress();
+        var updatedTask = existingTask.markInProgress();
         assertEquals(TaskStatus.IN_PROGRESS, updatedTask.status());
+    }
+
+    @Test
+    void userCanMarkDoneTask() {
+        var existingTask = new Task("Buy milk");
+        var updateTask = existingTask.markDone();
+        assertEquals(TaskStatus.DONE, updateTask.status());
     }
 }
