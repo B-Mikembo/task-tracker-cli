@@ -1,10 +1,7 @@
 package com.github.brice.task_tracker_cli.tasks.cli;
 
 import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
-import com.github.brice.task_tracker_cli.tasks.business.rules.services.AddTaskService;
-import com.github.brice.task_tracker_cli.tasks.business.rules.services.MarkDoneService;
-import com.github.brice.task_tracker_cli.tasks.business.rules.services.MarkTaskInProgressService;
-import com.github.brice.task_tracker_cli.tasks.business.rules.services.UpdateTaskService;
+import com.github.brice.task_tracker_cli.tasks.business.rules.services.*;
 import com.github.brice.task_tracker_cli.tasks.cli.resource.TaskRequest;
 import com.github.brice.task_tracker_cli.tasks.cli.resource.TaskResponse;
 import com.github.brice.task_tracker_cli.tasks.config.TasksRegistry;
@@ -49,6 +46,13 @@ public class TaskTrackerCLI {
                 var taskId = Long.parseLong(args[1]);
                 var markDoneService = new MarkDoneService(taskRepository);
                 markDoneService.execute(taskId);
+            }
+            case "list" -> {
+                if (args.length < 2) {
+                    var listAllService = new ListAllService(taskRepository);
+                    var tasks = listAllService.execute().stream().map(TaskResponse::fromDomain).toList();
+                    System.out.println(tasks);
+                }
             }
             default -> throw new IllegalArgumentException("Unknown command: " + args[0]);
         }

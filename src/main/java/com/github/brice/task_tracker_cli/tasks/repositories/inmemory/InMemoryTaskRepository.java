@@ -4,10 +4,15 @@ import com.github.brice.task_tracker_cli.tasks.business.repositories.TaskReposit
 import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
 
 import java.util.HashMap;
-import java.util.UUID;
+import java.util.List;
 
 public class InMemoryTaskRepository implements TaskRepository {
     private final HashMap<Long, Task> tasks = new HashMap<>();
+
+    @Override
+    public List<Task> findAll() {
+        return tasks.values().stream().toList();
+    }
 
     @Override
     public Task findById(long taskId) {
