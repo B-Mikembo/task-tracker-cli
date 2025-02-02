@@ -31,7 +31,12 @@ public class Task {
         return id;
     }
 
-    public Task markAsInProgress() {
+    public Task markDone() {
+        status = TaskStatus.DONE;
+        return this;
+    }
+
+    public Task markInProgress() {
         status = TaskStatus.IN_PROGRESS;
         return this;
     }
