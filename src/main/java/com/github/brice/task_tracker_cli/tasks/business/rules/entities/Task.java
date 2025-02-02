@@ -12,10 +12,13 @@ public class Task {
     private LocalDateTime updatedAt;
 
     public Task(String description) {
-        this(0L, description, TaskStatus.TODO, LocalDateTime.now(), LocalDateTime.now());
+        this(0L, requireNonNull(description, "Description cannot be null"), TaskStatus.TODO, LocalDateTime.now(), LocalDateTime.now());
     }
 
     public Task(long id, String description, TaskStatus status, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        if (description.isBlank()) {
+            throw new IllegalArgumentException("Description cannot be empty or blank");
+        }
         this.id = id;
         this.description = description;
         this.status = status;
