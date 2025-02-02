@@ -65,6 +65,13 @@ public class JsonTaskRepository implements TaskRepository {
     }
 
     @Override
+    public List<Task> findAll() {
+        return jsonTasks.stream()
+                .map(JsonTask::toDomain)
+                .toList();
+    }
+
+    @Override
     public Task findById(long taskId) {
         return jsonTasks.stream()
                 .filter(jsonTask -> jsonTask.getId() == taskId)
