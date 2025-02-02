@@ -2,6 +2,7 @@ package com.github.brice.task_tracker_cli.tasks.cli;
 
 import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
 import com.github.brice.task_tracker_cli.tasks.business.rules.services.AddTaskService;
+import com.github.brice.task_tracker_cli.tasks.business.rules.services.MarkTaskInProgressService;
 import com.github.brice.task_tracker_cli.tasks.business.rules.services.UpdateTaskService;
 import com.github.brice.task_tracker_cli.tasks.cli.resource.TaskRequest;
 import com.github.brice.task_tracker_cli.tasks.cli.resource.TaskResponse;
@@ -18,12 +19,13 @@ public class TaskTrackerCLI {
             System.out.println("Missing command");
         }
         configureRegistries();
-        var addTaskService = new AddTaskService(tasksRegistry.create("json"));
+        var taskRepository = tasksRegistry.create("json");
         switch (args[0]) {
             case "add" -> {
                 if (args.length < 2) {
                     throw new IllegalStateException("Missing description to add task");
                 }
+                var addTaskService = new AddTaskService(taskRepository);
                 var taskResponse = TaskResponse.fromDomain(addTaskService.execute(new Task(args[1])));
                 System.out.printf("Task added successfully (ID: %s)", taskResponse.id());
             }
@@ -32,8 +34,14 @@ public class TaskTrackerCLI {
                 if (args.length < 3) throw new IllegalStateException("Missing new description for updated task");
                 var taskId = args[1];
                 var taskRequest = new TaskRequest(args[2]);
-                var updateTaskService = new UpdateTaskService(tasksRegistry.create("json"));
+                var updateTaskService = new UpdateTaskService(taskRepository);
                 updateTaskService.execute(Long.parseLong(taskId), taskRequest.toDomain());
+            }
+            case "mark-in-progress" -> {
+                if (args.length < 2) throw new IllegalStateException("Missing update task id");
+                var taskId = Long.parseLong(args[1]);
+                var markTaskAsInProgressService = new MarkTaskInProgressService(taskRepository);
+                markTaskAsInProgressService.execute(taskId);
             }
             default -> throw new IllegalArgumentException("Unknown command: " + args[0]);
         }

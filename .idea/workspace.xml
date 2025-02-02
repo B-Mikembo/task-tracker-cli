@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fedb6cd0-2382-4743-9f5c-c093d2b64595" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/business/rules/services/UpdateTaskService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/cli/resource/TaskRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/business/rules/services/MarkTaskInProgressService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/github/brice/task_tracker_cli/tasks/business/rules/entities/TaskTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/business/repositories/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/business/repositories/TaskRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/business/rules/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/business/rules/entities/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/cli/TaskTrackerCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/cli/TaskTrackerCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/cli/resource/TaskResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/cli/resource/TaskResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/repositories/file/JsonTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/repositories/file/JsonTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/repositories/file/JsonTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/repositories/file/JsonTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/repositories/inmemory/InMemoryTaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/brice/task_tracker_cli/tasks/repositories/inmemory/InMemoryTaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/tasks.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +21,9 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Record" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -82,6 +74,7 @@
     "JUnit.TaskTest$DescriptionConstructor.givenEmptyDescription_whenCreateNewInstanceTask_thenThrowIllegalArgumentException.executor": "Run",
     "JUnit.TaskTest.executor": "Run",
     "JUnit.TaskTest.givenEmptyDescription_whenCreateNewInstanceTask_thenThrowIllegalArgumentException.executor": "Run",
+    "JUnit.TaskTest.userCanMarkTaskAsInProgress.executor": "Run",
     "JUnit.TaskTest.userCanUpdateTask.executor": "Run",
     "JUnit.UpdateTaskServiceTest.userCanUpdateTask.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -90,7 +83,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "update-task",
+    "git-widget-placeholder": "mark-task-in-progress",
     "kotlin-language-version-configured": "true",
     "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
@@ -117,7 +110,7 @@
     <configuration name="TaskTrackerCLI" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.cli.TaskTrackerCLI" />
       <module name="task-tracker-cli" />
-      <option name="PROGRAM_PARAMETERS" value="add &quot;Sortir les poubelles&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="mark-in-progress 1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.github.brice.task_tracker_cli.tasks.cli.*" />
@@ -159,17 +152,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JSONReaderTest.parseJSONTypeReferencePrecondition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TaskTest.userCanMarkTaskAsInProgress" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="task-tracker-cli" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.github.brice.task_tracker_cli.tasks.dataproviders.file.*" />
+          <option name="PATTERN" value="com.github.brice.task_tracker_cli.tasks.business.rules.entities.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.github.brice.task_tracker_cli.tasks.dataproviders.file" />
-      <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.dataproviders.file.JSONReaderTest" />
-      <option name="METHOD_NAME" value="parseJSONTypeReferencePrecondition" />
+      <option name="PACKAGE_NAME" value="com.github.brice.task_tracker_cli.tasks.business.rules.entities" />
+      <option name="MAIN_CLASS_NAME" value="com.github.brice.task_tracker_cli.tasks.business.rules.entities.TaskTest" />
+      <option name="METHOD_NAME" value="userCanMarkTaskAsInProgress" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -209,19 +202,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.TaskTrackerCLI" />
+      <item itemvalue="JUnit.TaskTest.userCanMarkTaskAsInProgress" />
       <item itemvalue="JUnit.TaskTest.userCanUpdateTask" />
       <item itemvalue="JUnit.UpdateTaskServiceTest.userCanUpdateTask" />
       <item itemvalue="JUnit.JSONReaderTest" />
       <item itemvalue="JUnit.JSONReaderTest.parseJSONListOfCar (1)" />
-      <item itemvalue="JUnit.JSONReaderTest.parseJSONTypeReferencePrecondition" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TaskTest.userCanMarkTaskAsInProgress" />
         <item itemvalue="JUnit.TaskTest.userCanUpdateTask" />
         <item itemvalue="JUnit.UpdateTaskServiceTest.userCanUpdateTask" />
         <item itemvalue="JUnit.JSONReaderTest" />
         <item itemvalue="JUnit.JSONReaderTest.parseJSONListOfCar (1)" />
-        <item itemvalue="JUnit.JSONReaderTest.parseJSONTypeReferencePrecondition" />
       </list>
     </recent_temporary>
   </component>
