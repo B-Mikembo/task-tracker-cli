@@ -9,13 +9,13 @@ import java.util.UUID;
 public class JsonTask {
     private String createdAt;
     private String description;
-    private String id;
+    private long id;
     private String status;
     private String updatedAt;
 
     public static JsonTask fromDomain(Task task) {
         var jsonTask = new JsonTask();
-        jsonTask.setId(task.id().toString());
+        jsonTask.setId(task.id());
         jsonTask.setDescription(task.description());
         jsonTask.setStatus(task.status().label());
         jsonTask.setCreatedAt(task.createdAt().toString());
@@ -44,11 +44,11 @@ public class JsonTask {
         this.description = description;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -69,7 +69,7 @@ public class JsonTask {
     }
 
     public Task toDomain() {
-        return new Task(UUID.fromString(id), description, TaskStatus.fromLabel(status), LocalDateTime.parse(createdAt), LocalDateTime.parse(updatedAt));
+        return new Task(id, description, TaskStatus.fromLabel(status), LocalDateTime.parse(createdAt), LocalDateTime.parse(updatedAt));
     }
 
     public String toJson() {
