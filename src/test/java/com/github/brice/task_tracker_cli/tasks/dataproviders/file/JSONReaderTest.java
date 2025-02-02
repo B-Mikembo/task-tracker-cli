@@ -1,5 +1,6 @@
 package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
 
+import com.github.brice.task_tracker_cli.tasks.repositories.file.JSONReader;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.ParameterizedType;

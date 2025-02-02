@@ -1,4 +1,4 @@
-package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.repositories.file;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Constructor;

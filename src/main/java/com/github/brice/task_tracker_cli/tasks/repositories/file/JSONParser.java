@@ -1,10 +1,10 @@
-package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.repositories.file;
 
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.github.brice.task_tracker_cli.tasks.dataproviders.file.JSONParser.Kind.*;
+import static com.github.brice.task_tracker_cli.tasks.repositories.file.JSONParser.Kind.*;
 import static java.lang.Integer.parseInt;
 import static java.util.regex.Pattern.compile;
 import static java.util.stream.Collectors.joining;

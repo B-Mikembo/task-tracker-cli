@@ -1,11 +1,11 @@
-package com.github.brice.task_tracker_cli.tasks.entrypoints.cli;
+package com.github.brice.task_tracker_cli.tasks.cli;
 
 import com.github.brice.task_tracker_cli.tasks.config.TasksRegistry;
-import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
-import com.github.brice.task_tracker_cli.tasks.application.services.AddTaskService;
-import com.github.brice.task_tracker_cli.tasks.dataproviders.file.JsonTaskRepository;
-import com.github.brice.task_tracker_cli.tasks.dataproviders.inmemory.InMemoryTaskRepository;
-import com.github.brice.task_tracker_cli.tasks.entrypoints.cli.resource.TaskResponse;
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
+import com.github.brice.task_tracker_cli.tasks.business.rules.services.AddTaskService;
+import com.github.brice.task_tracker_cli.tasks.repositories.file.JsonTaskRepository;
+import com.github.brice.task_tracker_cli.tasks.repositories.inmemory.InMemoryTaskRepository;
+import com.github.brice.task_tracker_cli.tasks.cli.resource.TaskResponse;
 
 public class TaskTrackerCLI {
 

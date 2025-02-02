@@ -1,5 +1,7 @@
 package com.github.brice.task_tracker_cli.tasks.domain.entities;
 
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.TaskStatus;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,7 +12,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static com.github.brice.task_tracker_cli.tasks.domain.entities.TaskStatus.TODO;
+import static com.github.brice.task_tracker_cli.tasks.business.rules.entities.TaskStatus.TODO;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 

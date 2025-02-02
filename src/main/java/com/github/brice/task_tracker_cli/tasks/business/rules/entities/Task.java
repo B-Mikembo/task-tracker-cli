@@ -1,4 +1,4 @@
-package com.github.brice.task_tracker_cli.tasks.domain.entities;
+package com.github.brice.task_tracker_cli.tasks.business.rules.entities;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

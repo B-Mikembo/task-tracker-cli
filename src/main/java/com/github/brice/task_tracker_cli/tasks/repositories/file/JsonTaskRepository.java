@@ -1,7 +1,7 @@
-package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.repositories.file;
 
-import com.github.brice.task_tracker_cli.tasks.application.repositories.TaskRepository;
-import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
+import com.github.brice.task_tracker_cli.tasks.business.repositories.TaskRepository;
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
 
 import java.io.*;
 import java.lang.reflect.ParameterizedType;
@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.joining;
 

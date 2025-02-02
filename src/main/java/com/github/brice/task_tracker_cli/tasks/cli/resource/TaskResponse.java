@@ -1,6 +1,6 @@
-package com.github.brice.task_tracker_cli.tasks.entrypoints.cli.resource;
+package com.github.brice.task_tracker_cli.tasks.cli.resource;
 
-import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
 
 import java.util.UUID;
 

@@ -1,7 +1,7 @@
-package com.github.brice.task_tracker_cli.tasks.dataproviders.file;
+package com.github.brice.task_tracker_cli.tasks.repositories.file;
 
-import com.github.brice.task_tracker_cli.tasks.domain.entities.Task;
-import com.github.brice.task_tracker_cli.tasks.domain.entities.TaskStatus;
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.Task;
+import com.github.brice.task_tracker_cli.tasks.business.rules.entities.TaskStatus;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

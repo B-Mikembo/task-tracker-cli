@@ -12,5 +12,12 @@
     "id": "507438d3-ed4d-4fa4-a95b-8b1f66a00040",
     "status": "todo",
     "updatedAt": "2025-02-01T19:37:10.701489"
+  },
+  {
+    "createdAt": "2025-02-02T08:04:26.361509",
+    "description": "Buy milk",
+    "id": "5fd64e2f-498c-4d76-9a95-aaf5d3d46130",
+    "status": "todo",
+    "updatedAt": "2025-02-02T08:04:26.362725"
   }
 ]
